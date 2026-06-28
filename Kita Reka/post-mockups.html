@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kita Reka — Post Mockups Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #EBE8D9;
+    --teal: #006171;
+    --peach: #F9B29E;
+    --amber: #FBB144;
+    --serif: 'Cormorant Garamond', 'Butler', serif;
+    --sans: 'Montserrat', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f4f2e8;
+    color: #2b2b2b;
+    font-family: var(--sans);
+    padding: 60px 24px 80px;
+    line-height: 1.55;
+  }
+  .container { max-width: 980px; margin: 0 auto; }
+
+  header { margin-bottom: 48px; }
+  header h1 {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+  header p { font-size: 14px; color: #555; max-width: 640px; margin-bottom: 6px; }
+
+  section { margin-bottom: 72px; }
+  section h2 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--teal);
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  section .note { font-size: 12.5px; color: #666; margin-bottom: 22px; font-style: italic; }
+
+  /* photo placeholder — visible cue */
+  .photo-placeholder {
+    background:
+      repeating-linear-gradient(45deg, #d5cfb8 0 6px, #d8d3bd 6px 12px),
+      linear-gradient(135deg, #cfc8b1, #ddd6c1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5a5644;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    padding: 12px;
+  }
+
+  /* shared logo treatments */
+  .k-emblem {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--teal);
+    position: absolute;
+    line-height: 1;
+  }
+  .kr-lockup {
+    font-family: var(--serif);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--teal);
+  }
+  .kr-lockup span { display: block; }
+
+  /* ============ POST 1 — MATERIALS (1:1) ============ */
+  .post-materials {
+    width: 440px;
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .post-materials .photo-placeholder { position: absolute; inset: 0; }
+  .post-materials .k-emblem { top: 20px; right: 22px; }
+  .post-materials .headline {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--teal);
+    position: absolute;
+    bottom: 64px;
+    left: 30px;
+    letter-spacing: -0.8px;
+    line-height: 1;
+  }
+  .post-materials .subline {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--teal);
+    position: absolute;
+    bottom: 34px;
+    left: 30px;
+    max-width: 320px;
+  }
+
+  /* ============ POST 2 — STUDIO AT REST (4:5) ============ */
+  .post-rest {
+    width: 380px;
+    height: 475px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .post-rest .photo-placeholder { position: absolute; inset: 0; }
+  .post-rest .title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--teal);
+    position: absolute;
+    bottom: 22px;
+    right: 22px;
+    letter-spacing: -0.3px;
+    background: rgba(235,232,217,0.85);
+    padding: 4px 10px;
+  }
+  .post-rest .k-emblem { bottom: 22px; left: 22px; font-size: 14px; }
+
+  /* ============ POST 3 — CAROUSEL ============ */
+  .carousel {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+  .slide {
+    width: 260px;
+    height: 325px;
+    flex-shrink: 0;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Slide 1: cover */
+  .slide-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 28px 22px;
+  }
+  .slide-cover .motif {
+    position: absolute;
+    top: 16px;
+    left: 18px;
+    font-size: 22px;
+    color: var(--teal);
+  }
+  .slide-cover .motif .dot {
+    color: var(--peach);
+    margin-left: 4px;
+  }
+  .slide-cover h3 {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--teal);
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .slide-cover .cover-sub {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--teal);
+    font-style: italic;
+  }
+  .slide-cover .kr-lockup { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); }
+
+  /* Material slides */
+  .slide-material .photo-placeholder { position: absolute; inset: 0; }
+  .slide-material .mat-headline {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--teal);
+    position: absolute;
+    bottom: 42px;
+    left: 18px;
+    letter-spacing: -0.4px;
+    line-height: 1;
+  }
+  .slide-material .mat-sub {
+    font-family: var(--sans);
+    font-size: 10px;
+    color: var(--teal);
+    position: absolute;
+    bottom: 20px;
+    left: 18px;
+    max-width: 200px;
+  }
+
+  /* CTA slide */
+  .slide-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 22px;
+  }
+  .slide-cta .frame {
+    border: 2px solid var(--peach);
+    padding: 28px 14px;
+    text-align: center;
+    width: 100%;
+  }
+  .slide-cta h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--teal);
+    margin-bottom: 12px;
+    letter-spacing: -0.4px;
+  }
+  .slide-cta .cta-meta {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    color: var(--teal);
+    line-height: 1.7;
+  }
+  .slide-cta .kr-lockup { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
+
+  /* ============ POST 4 — SUNDAY PROMPTS (4:5) ============ */
+  .prompt-row {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+  .prompt {
+    width: 260px;
+    height: 325px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 30px 24px;
+    text-align: center;
+  }
+  .prompt-cream { background: var(--cream); color: var(--teal); }
+  .prompt-peach { background: var(--peach); color: var(--teal); }
+  .prompt-amber { background: var(--amber); color: var(--teal); }
+  .prompt-teal  { background: var(--teal);  color: var(--cream); }
+  .prompt-teal .kr-lockup { color: var(--cream); }
+
+  .prompt .label {
+    font-family: var(--serif);
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 24px;
+    opacity: 0.85;
+  }
+  .prompt .line {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    line-height: 1.25;
+  }
+  .prompt .corner-motif {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 16px;
+  }
+  .prompt .kr-lockup {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+  }
+
+  /* ============ POST 5 — WORKSHOP SPOTLIGHT (4:5) ============ */
+  .post-workshop {
+    width: 380px;
+    height: 475px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+  }
+  .post-workshop .photo-placeholder {
+    height: 65%;
+    width: 100%;
+    position: relative;
+  }
+  .post-workshop .kr-lockup-mini {
+    font-family: var(--serif);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--teal);
+    background: rgba(235,232,217,0.9);
+    padding: 5px 8px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    line-height: 1.3;
+  }
+  .post-workshop .kr-lockup-mini span { display: block; }
+  .post-workshop .band {
+    height: 35%;
+    padding: 22px 26px 20px;
+    background: var(--cream);
+  }
+  .post-workshop .ws-headline {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--teal);
+    letter-spacing: -0.4px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .post-workshop .ws-sub {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: var(--teal);
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .post-workshop .ws-meta {
+    font-family: var(--sans);
+    font-size: 10px;
+    color: var(--teal);
+    line-height: 1.55;
+    border-top: 1px solid rgba(0,97,113,0.25);
+    padding-top: 10px;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid #d6d2c2;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Kita Reka — Post Mockups Preview</h1>
+    <p>Open this file in a browser. These are pixel-faithful previews of what each post will look like once the studio photographs are dropped in. Photo zones are shown as labelled placeholders (cream-grey hatched).</p>
+    <p>Brand stack used: cream <code>#EBE8D9</code>, teal <code>#006171</code>, peach <code>#F9B29E</code>, amber <code>#FBB144</code> · serif stand-in <em>Cormorant Garamond</em> (swap for Butler in Canva) · body Montserrat.</p>
+  </header>
+
+  <!-- POST 1 — MATERIALS -->
+  <section>
+    <h2>1 · Materials (single · 1:1 · 1080×1080)</h2>
+    <p class="note">Photo from Shoot Block A. One material per post, weekly.</p>
+    <div class="post-materials">
+      <div class="photo-placeholder">[ Photo · Shot 1 · Watercolour brush bleeding on cold-press paper ]</div>
+      <div class="k-emblem">K.</div>
+      <div class="headline">Watercolour.</div>
+      <div class="subline">For the days you want to soften the edges.</div>
+    </div>
+  </section>
+
+  <!-- POST 2 — STUDIO AT REST -->
+  <section>
+    <h2>2 · Studio at Rest (single · 4:5 · 1080×1350)</h2>
+    <p class="note">Photo from Shoot Block B. Title bottom-right on a cream chip; K-emblem bottom-left. No other type.</p>
+    <div class="post-rest">
+      <div class="photo-placeholder">[ Photo · Shot 9 · Studio at 8:45am, chairs angled, jars clear, paper blank ]</div>
+      <div class="title">Before doors open.</div>
+      <div class="k-emblem">K.</div>
+    </div>
+  </section>
+
+  <!-- POST 3 — CAROUSEL -->
+  <section>
+    <h2>3 · Three Materials for Three Kinds of Days (5-slide carousel · 4:5)</h2>
+    <p class="note">Cover + 3 macro slides (reused from Materials bank — Shots 1, 3, 5) + peach-frame CTA close.</p>
+    <div class="carousel">
+
+      <!-- Slide 1: Cover -->
+      <div class="slide slide-cover">
+        <div class="motif">◌<span class="dot">●</span></div>
+        <h3>Three materials.<br>Three kinds of days.</h3>
+        <div class="cover-sub">Pick the one that meets you today.</div>
+        <div class="kr-lockup"><span>K I T A</span><span>R E K A</span></div>
+      </div>
+
+      <!-- Slide 2: Soft -->
+      <div class="slide slide-material">
+        <div class="photo-placeholder">[ Watercolour macro · Shot 1 ]</div>
+        <div class="mat-headline">Watercolour.</div>
+        <div class="mat-sub">For the days that need softening.</div>
+      </div>
+
+      <!-- Slide 3: Heavy -->
+      <div class="slide slide-material">
+        <div class="photo-placeholder">[ Clay macro · Shot 3 ]</div>
+        <div class="mat-headline">Clay.</div>
+        <div class="mat-sub">For the days you want to hold the weight.</div>
+      </div>
+
+      <!-- Slide 4: Structured -->
+      <div class="slide slide-material">
+        <div class="photo-placeholder">[ Collage macro · Shot 5 ]</div>
+        <div class="mat-headline">Collage.</div>
+        <div class="mat-sub">For the days you need to put pieces in order.</div>
+      </div>
+
+      <!-- Slide 5: CTA -->
+      <div class="slide slide-cta">
+        <div class="frame">
+          <h3>Come pick yours.</h3>
+          <div class="cta-meta">
+            Open Studio<br>
+            Saturdays + Sundays<br>
+            RM 50 · @parcmalaysia
+          </div>
+        </div>
+        <div class="kr-lockup"><span>K I T A</span><span>R E K A</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POST 4 — SUNDAY PROMPTS -->
+  <section>
+    <h2>4 · Sunday Prompts (single · 4:5)</h2>
+    <p class="note">Typography-only. No photography needed. Background rotates weekly · cream → peach → amber → teal.</p>
+    <div class="prompt-row">
+
+      <div class="prompt prompt-cream">
+        <div class="corner-motif">◌</div>
+        <div class="label">Sunday Prompt.</div>
+        <div class="line">Draw what your<br>shoulders feel like<br>today.</div>
+        <div class="kr-lockup"><span>K I T A</span><span>R E K A</span></div>
+      </div>
+
+      <div class="prompt prompt-peach">
+        <div class="corner-motif">·</div>
+        <div class="label">Sunday Prompt.</div>
+        <div class="line">If your week was<br>a colour, mix it.</div>
+        <div class="kr-lockup"><span>K I T A</span><span>R E K A</span></div>
+      </div>
+
+      <div class="prompt prompt-amber">
+        <div class="corner-motif">⌒</div>
+        <div class="label">Sunday Prompt.</div>
+        <div class="line">One mark for the<br>thing you can't<br>name yet.</div>
+        <div class="kr-lockup"><span>K I T A</span><span>R E K A</span></div>
+      </div>
+
+      <div class="prompt prompt-teal">
+        <div class="corner-motif">~</div>
+        <div class="label">Sunday Prompt.</div>
+        <div class="line">A line for what<br>you got through<br>this week.</div>
+        <div class="kr-lockup"><span>K I T A</span><span>R E K A</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POST 5 — WORKSHOP SPOTLIGHT -->
+  <section>
+    <h2>5 · Workshop Spotlight (single · 4:5)</h2>
+    <p class="note">Photo from Shoot Block C. Activity-led hero (not a schedule poster). Cream lower band carries name + meta. KitaReka lockup top-left on a cream chip.</p>
+    <div class="post-workshop">
+      <div class="photo-placeholder">[ Photo · Shot 17 · Process Painting on easel, layered paint marks, no signature ]</div>
+      <div class="kr-lockup-mini"><span>K I T A</span><span>R E K A</span></div>
+      <div class="band">
+        <div class="ws-headline">Process Painting.</div>
+        <div class="ws-sub">Learning to follow what the brush wants.</div>
+        <div class="ws-meta">
+          Sat 28 June · 10am · PARC Subang Jaya · RM 50<br>
+          Book via link in bio.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Stand-in fonts in this preview: <em>Cormorant Garamond</em> → Butler · Montserrat → Montserrat.<br>
+    Stand-in logo: text lockup "KITA REKA" → swap for actual KitaReka logo files in Canva.<br>
+    Placeholder photos (cream-grey hatched zones) → swap for shoot output from Blocks A, B, C.
+  </footer>
+
+</div>
+</body>
+</html>
