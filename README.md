@@ -19,6 +19,39 @@ This Claude Code project is a working assistant for Serif Studio — helping wit
 - Building social media pages for clients (currently Sanis Shoes)
 - Copywriting for services, proposals, and brand assets
 
+It also stores brand assets, project files, and reference notes for the studio's
+work and the founder's wider creative practice.
+
+-----
+
+## Repository Contents
+
+### Brand & client projects
+
+- **Sanis Shoes/** — first real client (Pakistani footwear): launch posters, social guidelines, brand assets
+- **Cookie Ninja/** — social media & product photography work, brand book, and a portfolio project description
+- **Kita Reka/** — content proposal, shoot brief, and post mockups
+- **Maeven Studio/**, **Brunch Out/**, **LOA & FAYE/**, **Sophie's Overnight Oats/** — spec / portfolio projects
+
+### Founder's creative practice
+
+- **Tadabbur/** — the Tadabbur Journal (deck, build script, assets) plus product notes (description, interior flow, pricing, launch plan)
+- **Afternoon Club/** — brand notes for The Afternoon Club product brand: naming, products (Tadabbur Journal, Dear Allah Diary, reflection cards), and launch/platform strategy
+
+### Career & freelance reference
+
+- **Career & Freelance/** — distilled guidance on:
+  - `cv-and-job-search.md` — CV improvements, direction, remote roles
+  - `freelance-platforms.md` — Contra/Upwork/Etsy/Gumroad/Ko-fi, Canva templates, Malaysia payment notes
+  - `contra-portfolio-plan.md` — project order, thumbnail, case-study framing
+  - `resin-workshop-plan.md` — costs, pricing, group size, cafe outreach
+
+### Studio docs
+
+- **CLAUDE.md** — full studio context and brand guidelines
+- **serif-studio-brand-book.md** — brand book
+- **inspiration-artbysong.md** — reference / inspiration notes
+
 -----
 
 ## Studio Identity
